@@ -5,7 +5,7 @@ class SimpleCounterButton extends Component {
 
     updateCounter = () => {
       console.log('yolo');
-      this.setState({counter: this.state.counter++})
+      this.setState({counter: this.state.counter + 1})
     };
 
   
