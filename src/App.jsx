@@ -41,8 +41,8 @@ class App extends Component {
           <Route path="/first">
             <First />
           </Route>
-          <Route path="/first">
-            <First />
+          <Route path="/second">
+            <Second />
           </Route>
         </Switch>
       </div>

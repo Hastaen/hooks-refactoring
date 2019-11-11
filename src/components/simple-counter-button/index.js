@@ -4,7 +4,6 @@ class SimpleCounterButton extends Component {
     state = {counter: 0};
 
     updateCounter = () => {
-      console.log('yolo');
       this.setState({counter: this.state.counter + 1})
     };
 
@@ -15,6 +14,7 @@ class SimpleCounterButton extends Component {
           <h1>Hello, world!</h1>
           <button
             type="button"
+            id="counterButton"
             onClick={this.updateCounter}
           >
               Click count: {this.state.counter}
