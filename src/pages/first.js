@@ -1,6 +1,12 @@
 import React from 'react';
 import SimpleCounterButton from '../components/simple-counter-button';
 
-const First = () => (<div><SimpleCounterButton/></div>);
+import './styles.css'
+
+const First = () => (
+    <div className="page-layout">
+        <SimpleCounterButton/>
+    </div>
+);
 
 export default First
