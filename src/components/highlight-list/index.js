@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 import './styles.css';
@@ -27,29 +27,31 @@ class HighlightList extends Component {
   
     render() {
       return (
-        <div>
+        <Fragment>
           {this.state.list.length > 0 &&
             this.state.list.map((listItem) => (
                 <button
                     className={listItem.isChosen ? "btn-chosen" : "btn-default"}
                     type='button'
+                    key={listItem.id}
                     onClick={() => this.chooseListItem(listItem.id)}        
                 >
                     {listItem.value}
                 </button>
             ))  
           }
-        </div>
+        </Fragment>
       );
     }
-  }
-  HighlightList.propTypes = {
-      inputList: PropTypes.arrayOf(PropTypes.shape({
-        value: PropTypes.string.isRequired,
-        id: PropTypes.number.isRequired,
-      })),
-  };
+}
+
+HighlightList.propTypes = {
+    inputList: PropTypes.arrayOf(PropTypes.shape({
+    value: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
+    })),
+};
 
 
-  export default HighlightList;
+export default HighlightList;
   

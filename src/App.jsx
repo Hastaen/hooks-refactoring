@@ -6,7 +6,9 @@ import {
   Link
 } from "react-router-dom";
 import First from './pages/first';
-import Second from './pages/second'
+import Second from './pages/second';
+import Third from './pages/third';
+
 
 class App extends Component {
     render() {
@@ -23,17 +25,11 @@ class App extends Component {
           <li>
             <Link to="/second">Second lab</Link>
           </li>
+          <li>
+            <Link to="/third">Third lab</Link>
+          </li>
         </ul>
-
         <hr />
-
-        {/*
-          A <Switch> looks through all its children <Route>
-          elements and renders the first one whose path
-          matches the current URL. Use a <Switch> any time
-          you have multiple routes, but you want only one
-          of them to render at a time
-        */}
         <Switch>
           <Route exact path="/">
             <First />
@@ -43,6 +39,9 @@ class App extends Component {
           </Route>
           <Route path="/second">
             <Second />
+          </Route>
+          <Route path="/third">
+            <Third />
           </Route>
         </Switch>
       </div>

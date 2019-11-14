@@ -1,0 +1,13 @@
+.row-default {
+    background-color: cornflowerblue;
+}
+
+@keyframes new-row-bg {
+    from {background-color: red;}
+    to {background-color: yellow;}
+  }
+
+.row-new {
+    animation-name: new-row-bg;
+    animation-duration: 1s;
+}

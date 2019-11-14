@@ -12,6 +12,10 @@ const dataList = [
         value: 'Katt',
         id: 2     
     },
+    {
+        value: 'Spade',
+        id: 3     
+    },
 ]
 
 const Second = () => (
