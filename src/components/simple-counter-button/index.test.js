@@ -10,7 +10,8 @@ describe('SimpleCounterButton test', () => {
 
     it('Should update counter on click', () => {
         const wrapper = mount(<SimpleCounterButton />);
+        expect(wrapper.find('#counterButton').text()).toBe('Click count: 0');
         wrapper.find('#counterButton').simulate('click');
-        expect(wrapper.state().counter).toBe(1);
+        expect(wrapper.find('#counterButton').text()).toBe('Click count: 1');
     })
 });

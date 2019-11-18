@@ -1,26 +1,28 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 
-class SimpleCounterButton extends Component {
-    state = {counter: 0};
+const SimpleCounterButton = () => {
+    // state = {counter: 0};
+    const [ counter, setCounter ] = useState(0);
 
-    updateCounter = () => {
-      this.setState({counter: this.state.counter + 1})
+    const updateCounter = () => {
+      // this.setState({counter: this.state.counter + 1});
+      setCounter(counter + 1);
     };
 
   
-    render() {
-      return (
-        <div>
-          <button
-            type="button"
-            id="counterButton"
-            onClick={this.updateCounter}
-          >
-              Click count: {this.state.counter}
-          </button>
-        </div>
-      );
-    }
+    
+    return (
+      <div>
+        <button
+          type="button"
+          id="counterButton"
+          onClick={() => updateCounter()}
+        >
+            Click count: {counter}
+        </button>
+      </div>
+    );
+    
   }
 
   export default SimpleCounterButton;
