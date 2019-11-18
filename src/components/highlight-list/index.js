@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import './styles.css';
 
 class HighlightList extends Component {
-    state = {list: []};
+    state = { list: [] };
 
     componentDidMount(){
         if(this.props.inputList.length > 0) {

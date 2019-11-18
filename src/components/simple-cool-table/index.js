@@ -4,8 +4,7 @@ import PropTypes from 'prop-types';
 import './styles.css';
 
 class SimpleCoolTable extends Component {
-    state = {rows: []};
-    maxRows = 20;
+    state = { rows: [] };
 
     componentDidMount(){
         if(this.props.inputRows.length > 0) {
@@ -17,22 +16,15 @@ class SimpleCoolTable extends Component {
 
     componentDidUpdate(prevProps){
         if(this.props.inputRows.length !== prevProps.inputRows.length ) {
-            const previousRowsResetted = prevProps.inputRows.map((inputRow) => 
-                ({ ...inputRow, isNew: false }));
+            const previousRowsResetted = prevProps.inputRows
+                .map((inputRow) => ({ ...inputRow, isNew: false }));
             const updatedRows = [
-                ...(previousRowsResetted.length > 20 
-                ? 
-                previousRowsResetted.slice(10)
-                :
-                previousRowsResetted),
+                ...previousRowsResetted,
                 {
-                    ...this.props.inputRows[this.props.inputRows.length-1],
+                    ...this.props.inputRows[this.props.inputRows.length - 1],
                     isNew: true
                 }
             ]
-            if(updatedRows.length > this.maxRows) {
-
-            }
             this.setState({rows: updatedRows});
         }
     }
@@ -41,35 +33,41 @@ class SimpleCoolTable extends Component {
       return (
         <Fragment>
             <table>
-                <tr>
-                    <th>Name</th>
-                    <th>Blob</th>
-                    <th>Age</th>
-                </tr>
-                {this.state.rows.length > 0 &&
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Password</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {this.state.rows.length > 0 &&
                         this.state.rows.map((row) => (
                             <tr 
+                                key={row.id}
                                 className={row.isNew ? "row-new" : "row-default"}
                             >
-                                <td>Jill</td>
-                                <td>Smith</td>
-                                <td>50</td>
+                                <td>{row.name}</td>
+                                <td>{row.password}</td>
+                                <td>{row.email}</td>
                             </tr>
                         ))
-                }
+                    }
+                </tbody>
           </table>
         </Fragment>
       );
     }
 }
-/*
+
 SimpleCoolTable.propTypes = {
     inputRows: PropTypes.arrayOf(PropTypes.shape({
-    value: PropTypes.string.isRequired,
-    id: PropTypes.number.isRequired,
+        name: PropTypes.string.isRequired,
+        password: PropTypes.string.isRequired,
+        email: PropTypes.string.isRequired,
     })),
 };
-*/
+
 
 export default SimpleCoolTable;
   

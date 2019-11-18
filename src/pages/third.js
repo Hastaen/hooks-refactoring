@@ -1,19 +1,22 @@
 import React, { Component } from 'react';
+import faker from 'faker';
 import SimpleCoolTable from '../components/simple-cool-table';
 
 import './styles.css'
 
-const tableDataSeed = [
-    {
-        name: "John",
-        age: 13,
-        hometown: "Shanghai"
-    },
-];
+const getRandomData = () => {
+    const newRandomData = {
+        id: faker.random.uuid(),
+        name: faker.internet.userName(),
+        password: faker.internet.password(),
+        email: faker.internet.email(),
+    }
+    return newRandomData;
+}
 
 class Third extends Component {
-    state = {tableData: tableDataSeed};
-  
+    state = {tableData: [getRandomData()]};
+    
     componentDidMount() {
         this.timerID = setInterval(
             () => this.tick(),
@@ -29,11 +32,7 @@ class Third extends Component {
         this.setState({
             tableData: [
                 ...this.state.tableData,
-                {
-                    name: "John",
-                    age: 13,
-                    hometown: "Shanghai"
-                }
+                getRandomData()
             ]
         });
     }
