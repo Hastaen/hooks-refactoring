@@ -1,104 +1,66 @@
-# webpack 4 React boilerplate [![GitHub license](https://img.shields.io/badge/license-MIT-lime.svg)](https://github.com/FerJSsilva/webpack-4-react-boilerplate/blob/master/LICENSE)
+## Description
 
-A simple and complete Webpack 4 React Boilerplate.
+This repo contains 4 assignments. The assigments are to move from React class components to using React Hooks. The class components also contains tests. In order to complete a assignment the tests should succeed as well. This means that one might have to rewrite the tests in some cases.
 
-* Ready to start React App :zap:
-* Image loader configured :camera:
-* SASS and CSS loaders configured :art:
-* Hot reload configured :sunny:
-* Unit test tools configured :microscope:
-* Production build optimized :chart_with_upwards_trend:
+## Things needed
 
-## Motivation
+Yarn -> download from official site.
 
-The purpose of this boilerplate is help to create new apps and projects. It's _easy to customize_ and if you need help to understand you can check the commits for a _step-by-step_ guide.
+Node -> A somewhat new version.
 
-It´s a solid base which will help to understand webpack [core concepts](https://webpack.js.org/concepts/).
+## Up and running
 
-## Getting Started
+Run: `yarn` -> same as npm install
 
-To start you can simply [download](https://github.com/FerJSsilva/webpack-4-react-boilerplate/archive/master.zip) the boilerplate and unzip it into your working directory. You can also clone if you want to contribute.
+Run: `yarn test` -> runs test suite
 
-### Prerequisites
+Run: `yarn start` -> starts development server
 
-* Node.js v8 or above
+## Assigments
 
-You can check your node version using the command:
+### 1 Click Counter
 
-```CLI
-node --version
-```
+`/components/simple-counter-button`
 
-### Installing
+Refactor with Hooks.
+Does the tests work?
 
-Install dependencies and start using [yarn](https://yarnpkg.com):
+### 2 Highlight List
 
-```CLI
-yarn install
-yarn start
-```
+`/components/highlight-list`
 
-Or via [npm](https://www.npmjs.com/):
+Refactor with Hooks.
+What happened to the tests after a refactoring?
 
-```CLI
-npm install
-npm start
-```
+### 3 Simple Cool Table
 
-### Testing
+`/components/simple-cool-table`
 
-You can run your tests using:
 
-```CLI
-yarn test
-```
+Refactor with Hooks.
+How does one get access to previous props with Hooks?
 
-It´s possible to generate the code coverage of your code. Jest will generate a HTML file with all information from your tests. To do this run the command:
+### 4 Counter Button part 2
 
-```CLI
-yarn test:coverage
-```
+`/components/simple-counter-button-part-deux`
 
-### Production build
 
-You can generate an optimized distribution bundle. To do this run the command:
+There are no tests. The goal is to refactor the functionality into a "Custom Hook". 
+A custom Hook is a Hook or sets of hooks which can be reused.
 
-```CLI
-yarn build
-```
+You will have to write tests from scratch....
 
-It´s possible to check the size and content of your bundled file. To do this run the command:
+[Custom Hooks docs](https://reactjs.org/docs/hooks-custom.html)
 
-```CLI
-yarn analyze
-```
+## Links
 
-That´s it! Remember to change the project information in package.json, README and LICENSE if necessary. :mortar_board:
+[Official docs](https://reactjs.org/docs/hooks-intro.html)
 
-Give the project a star if you liked it. Happy Hacking! :sunglasses: :star:
+[Cheat sheet](https://react-hooks-cheatsheet.com/)
 
-## Built With
+[Jest](https://jestjs.io/)
 
-* [webpack](https://webpack.js.org/) - Static module bundler
-* [React](https://babeljs.io/) - JavaScript library for building user interfaces
-* [Babel](https://babeljs.io/) - EcmaScript Transpiler
-* [Yarn](https://yarnpkg.com) - Dependency Management
-* [Jest](https://jestjs.io/) - JavaScript Testing
-* [Enzyme](https://airbnb.io/enzyme/docs/api/) - Component tests for React
+[Enzyme](https://airbnb.io/enzyme/)
 
-## Contributing
+[Kent Dodds (Testing and React)](https://kentcdodds.com/blog/)
 
-Suggestions or pull requests are welcome.
-
-For major changes, please open an issue first to discuss what you would like to change.
-
-## Versions
-
-* v1.0 - A complete webpack 4 configuration
-* v1.1 - Production build optimization
-
-Click [here](https://github.com/FerJSsilva/webpack-4-react-boilerplate/tags) to see or download the project in a specific tag.
-
-## License
-
-This project is licensed under the MIT Licensed - see the [LICENSE](LICENSE) file for details
