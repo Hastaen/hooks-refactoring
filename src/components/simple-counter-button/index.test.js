@@ -10,7 +10,7 @@ describe('SimpleCounterButton test', () => {
 
     it('Should update counter on click', () => {
         const wrapper = mount(<SimpleCounterButton />);
-        wrapper.find('#counterButton').simulate('click');
+        wrapper.instance().updateCounter();
         expect(wrapper.state().counter).toBe(1);
     })
 });
