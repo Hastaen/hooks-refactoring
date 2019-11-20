@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 
 const lang = {
     resetLabel: 'Reset',
@@ -8,55 +8,71 @@ const lang = {
 
 import './styles.css';
 
-class SimpleCounterButtonDeux extends Component {
-    state = {counter: 0};
 
-    resetCounter = () => {
-        this.setState({counter: 0})
-    };
-
-    incrementCounter = () => {
-      this.setState({counter: this.state.counter + 1})
-    };
-
-    
-    decrementCounter = () => {
-        this.setState({counter: this.state.counter - 1})
-    };
-
+function useCounterHandling() {
+    const [counter, setCounter] = useState(0);
   
-    render() {
+    const resetCounter = () => {
+        setCounter(0);
+    };
+    
+    const incrementCounter = () => {
+        setCounter(counter + 1);
+    };
+    
+    const decrementCounter = () => {
+        setCounter(counter - 1);
+    };
+  
+    return {
+        counter,
+        resetCounter,
+        incrementCounter,
+        decrementCounter,
+    };
+  }
+  
+
+const SimpleCounterButtonDeux = () => {
+    const {
+        counter,
+        resetCounter,
+        incrementCounter,
+        decrementCounter,
+    } = useCounterHandling()
+
       return (
         <section>
             <div>
                 <button
                     type="button"
                     id="resetButton"
-                    onClick={this.resetCounter}
+                    onClick={() => resetCounter()}
                 >
                     {lang.resetLabel}
                 </button>
                 <button
                     type="button"
                     id="incrementButton"
-                    onClick={this.incrementCounter}
+                    onClick={() => incrementCounter()} 
                 >
                     {lang.incrementLabel}
                 </button>
                 <button
                     type="button"
                     id="decrementButton"
-                    onClick={this.decrementCounter}
+                    onClick={() => decrementCounter()}
                 >
                     {lang.decrementLabel}
                 </button>
             </div>
-            <div className="counter-result-wrapper">
-                Counter: {this.state.counter}
+            <div 
+                className="counter-result-wrapper"
+            >
+                Counter: {counter}
             </div>
         </section>
       );
-    }
   }
 
   export default SimpleCounterButtonDeux;
